@@ -49,8 +49,8 @@ public class UsuarioController {
 
         if (usuarioOptional.isPresent()) {
             Usuario existingUsuario = usuarioOptional.get();
-            existingUsuario.setUsername(usuarioDTO.getUsername());  // Substitua isso pelos campos relevantes
-            existingUsuario.setPassword(usuarioDTO.getPassword());  // Substitua isso pelos campos relevantes
+            existingUsuario.setUsername(usuarioDTO.getUsername());
+            existingUsuario.setPassword(usuarioDTO.getPassword());
 
             Usuario updatedUsuario = usuarioService.saveUsuario(existingUsuario);
             return ResponseEntity.ok(UsuarioDTO.fromEntity(updatedUsuario));
